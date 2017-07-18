@@ -1,0 +1,41 @@
+<div class="container-fluid">
+	<div class="container">
+		<div class="row">
+
+			<button class="btn btn-default btn-lg" ng-click="vm.newPerson()">{{'persons.button.add' | translate}}</button>
+			<button class="btn btn-default btn-lg" ng-click="vm.openGraph()" ng-disabled="vm.persons.length <1">{{'persons.button.chart' | translate}}</button>
+
+		</div>
+	</div>
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>{{'persons.list.name' | translate}}</th>
+					<th>{{'persons.list.age' | translate}}</th>
+					<th>{{'persons.list.nick' | translate}}</th>
+					<th>{{'persons.list.employee' | translate}}</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="person in vm.persons">
+					<td>{{$index+1}}</td>
+					<td>
+						{{person.name}}<br/> {{vm.getPersonJob(person)}}
+
+					</td>
+					<td>{{person.age >=0 ? person.age : ''}}</td>
+					<td>{{person.nick}}</td>
+					<td><input type="checkbox" ng-model="person.employee" ng-disabled="true"></td>
+					<td><button ng-click="vm.deletePerson($index)">{{'persons.button.delete' | translate}}</button></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<div class="container">
+		<textarea class="form-control" rows="25">{{vm.persons | json}}</textarea>
+	</div>
+</div>

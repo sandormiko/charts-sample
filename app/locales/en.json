@@ -1,0 +1,21 @@
+{
+    "app.title": "Charts sample",
+    "persons.button.add": "Add",
+    "persons.button.chart": "Chart",
+    "persons.button.delete": "Delete",
+    "persons.button.save": "Save",
+    "persons.button.cancel": "Cancel",
+    "persons.button.close": "Close",
+    "persons.list.name": "Name",
+    "persons.list.age": "Age",
+    "persons.list.employee": "Employee",
+    "persons.list.nick": "Nick",
+    "persons.list.job": "Job title",
+
+    "persons.chart.title": "Distribution of persons by their age",
+    "persons.chart.xAxis.title": "Age",
+    "persons.chart.yAxis.title": "Nr of persons",
+    "persons.delete.confirm.title": "Confirmation",
+    "persons.delete.confirm.message": "Do you want to delete ?"
+
+}

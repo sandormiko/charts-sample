@@ -1,0 +1,40 @@
+{
+  "name": "frontend-app",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "test",
+    "build": "webpack --progress",
+    "start": "node server.js"
+  },
+  "author": "Sándor Mikó",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-translate": "^2.15.2",
+    "angular-ui-bootstrap": "2.5.0",
+    "angular-ui-router": "1.0.0-rc.1",
+    "bootstrap": "3.3.7",
+    "express": "^4.15.3",
+    "highcharts": "^5.0.12"
+  },
+  "devDependencies": {
+    "@types/angular": "1.5.8",
+    "@types/angular-translate": "^2.15.1",
+    "@types/angular-ui-bootstrap": "0.13.41",
+    "@types/highcharts": "^4.2.57",
+    "@types/jquery": "2.0.40",
+    "@types/node": "7.0.2",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.11.2",
+    "html-minify-loader": "1.1.0",
+    "json-loader": "^0.5.4",
+    "raw-loader": "0.5.1",
+    "style-loader": "^0.13.1",
+    "ts-loader": "2.2.2",
+    "typescript": "2.1",
+    "url-loader": "^0.5.9",
+    "webpack": "1.13.3",
+    "webpack-dev-server": "1.16.2"
+  }
+}
