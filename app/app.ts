@@ -9,5 +9,5 @@ import {config} from './AppConfig';
 import 'angular-translate';
 
 
-angular.module('app', ['ui.bootstrap', 'ui.router','pascalprecht.translate', personModuleName])
+angular.module('app', ['ui.bootstrap', 'ui.router', 'pascalprecht.translate', personModuleName])
     .config(config);

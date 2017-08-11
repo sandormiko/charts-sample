@@ -5,21 +5,21 @@ module.exports = {
 
     },
     plugins: [
-      new webpack.optimize.CommonsChunkPlugin({
-        name :'app',
-        filename:'app.js',
-        minChunk:Infinity
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'app',
+            filename: 'app.js',
+            minChunk: Infinity
 
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-          minimize: true,
-          compress: {
-              warnings: false
-          }
-      })
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress: {
+                warnings: false
+            }
+        })
 
 
-],
+    ],
     output: {
         path: './dist',
 
@@ -28,7 +28,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.ts', '.js', '.css', '.html','.json']
+        extensions: ['', '.ts', '.js', '.css', '.html', '.json']
     },
     module: {
         loaders: [{
@@ -44,12 +44,10 @@ module.exports = {
         }, {
             test: /\.html$/,
             loader: 'raw!html-minify'
-        },
-            {
+        }, {
             test: /\.json$/,
             loader: 'json'
-        }
-        ]
+        }]
     }
 
 };

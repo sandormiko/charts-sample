@@ -1,5 +1,8 @@
 {
     "app.title": "Charts sample",
+    "app.nav.home.title": "Home",
+    "app.nav.persons.title": "Persons",
+    "app.home.description": "This app is a simple demonstration of combining Highcharts with Angular",
     "persons.button.add": "Add",
     "persons.button.chart": "Chart",
     "persons.button.delete": "Delete",
@@ -11,7 +14,7 @@
     "persons.list.employee": "Employee",
     "persons.list.nick": "Nick",
     "persons.list.job": "Job title",
-
+    "persons.popup.title" : "Create new person",
     "persons.chart.title": "Distribution of persons by their age",
     "persons.chart.xAxis.title": "Age",
     "persons.chart.yAxis.title": "Nr of persons",
