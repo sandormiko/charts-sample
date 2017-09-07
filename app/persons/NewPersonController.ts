@@ -13,7 +13,9 @@ export class NewPersonController {
     $onInit() {
         this.person = <PersonDTO>{};
     }
-    submit(close: Function) {
+    submit(close: Function, isFormValid: boolean) {
+      if(isFormValid){
         this.personService.savePerson(this.person, close);
+        }
     }
 }

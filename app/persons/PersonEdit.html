@@ -1,4 +1,4 @@
-<form name="personForm" class="form-horizontal" ng-submit="vm.submit($close)" novalidate>
+<form name="personForm" novalidate class="form-horizontal" ng-submit="vm.submit($close, personForm.$valid)" novalidate>
 
     <div class="modal-header">
         <h4>{{'persons.popup.title' | translate}}</h4>
@@ -6,20 +6,29 @@
     <div class="modal-body">
         <div class="form-group">
             <label for="name" class="control-label col-xs-2">{{'persons.list.name' | translate}}</label>
-            <div class="col-xs-10">
-                <input type="text" ng-model="vm.person.name" class="form-control" id="name" placeholder="Name" required>
+            <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.name.$valid }">
+                <input type="text" ng-model="vm.person.name" name ="name" class="form-control" id="name" placeholder="Name" required>
+                <div ng-messages="personForm.name.$error" ng-show="personForm.$submitted && personForm.name.$invalid">
+                      <div ng-messages="required" >{{'persons.delete.confirm.message' | translate}}</div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label for="job" class="control-label col-xs-2">{{'persons.list.job' | translate}}</label>
-            <div class="col-xs-10">
-                <input type="text" ng-model="vm.person.job" class="form-control" id="job" placeholder="Job title" required>
+            <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.job.$valid }">
+                <input type="text" ng-model="vm.person.job" class="form-control" name="job" placeholder="Job title" required>
+                <div ng-messages="personForm.job.$error" ng-show="personForm.$submitted && personForm.job.$invalid">
+                        <div ng-messages="required">{{'persons.delete.confirm.message' | translate}}</div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label for="age" class="control-label col-xs-2">{{'persons.list.age' | translate}}</label>
-            <div class="col-xs-10">
-                <input type="text"  ng-model="vm.person.age" class="form-control" ng-pattern="/^[0-9]{1,2}$/" id="age" placeholder="Age" required>
+            <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.age.$valid }">>
+                <input type="text"  ng-model="vm.person.age" class="form-control" ng-pattern="/^[0-9]*$/" name="age" placeholder="Age" required>
+                <div ng-messages="personForm.age.$error" ng-show="personForm.$submitted && personForm.age.$invalid">
+                        <div ng-messages="pattern">TODO</div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -40,7 +49,7 @@
 
 
         <div class="modal-footer">
-            <button class="btn btn-primary" type="submit" id="submit" ng-disabled="!personForm.$valid">{{'persons.button.save' | translate}}</button>
+            <button class="btn btn-primary" type="submit" id="submit">{{'persons.button.save' | translate}}</button>
             <button type="button" class="btn" ng-click="$dismiss()">{{'persons.button.cancel' | translate}}</button>
         </div>
 </form>
