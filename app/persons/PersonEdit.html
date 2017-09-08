@@ -7,40 +7,44 @@
         <div class="form-group">
             <label for="name" class="control-label col-xs-2">{{'persons.list.name' | translate}}</label>
             <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.name.$valid }">
-                <input type="text" ng-model="vm.person.name" name ="name" class="form-control" id="name" placeholder="Name" required>
-                <div ng-messages="personForm.name.$error" ng-show="personForm.$submitted && personForm.name.$invalid">
-                      <div ng-messages="required" >{{'persons.delete.confirm.message' | translate}}</div>
-                </div>
+                <input type="text" ng-model="vm.person.name" name="name" class="form-control" id="name" placeholder="Name" required/>
+                <span class="help-block" ng-show="personForm.$submitted && personForm.name.$invalid">
+                  {{'persons.error.mandatory.field' | translate}}
+                </span>
             </div>
         </div>
         <div class="form-group">
             <label for="job" class="control-label col-xs-2">{{'persons.list.job' | translate}}</label>
             <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.job.$valid }">
                 <input type="text" ng-model="vm.person.job" class="form-control" name="job" placeholder="Job title" required>
-                <div ng-messages="personForm.job.$error" ng-show="personForm.$submitted && personForm.job.$invalid">
-                        <div ng-messages="required">{{'persons.delete.confirm.message' | translate}}</div>
-                </div>
+                <span class="help-block" ng-show="personForm.$submitted && personForm.job.$invalid">
+                  {{'persons.error.mandatory.field' | translate}}</span>
+
             </div>
+
         </div>
         <div class="form-group">
             <label for="age" class="control-label col-xs-2">{{'persons.list.age' | translate}}</label>
-            <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.age.$valid }">>
-                <input type="text"  ng-model="vm.person.age" class="form-control" ng-pattern="/^[0-9]*$/" name="age" placeholder="Age" required>
-                <div ng-messages="personForm.age.$error" ng-show="personForm.$submitted && personForm.age.$invalid">
-                        <div ng-messages="pattern">TODO</div>
-                </div>
+            <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.age.$valid }">
+                <input type="text" ng-model="vm.person.age" class="form-control" ng-pattern="/^[0-9]*$/" name="age" placeholder="Age" required>
+                <span class="help-block" ng-show="personForm.$submitted && personForm.age.$invalid">
+                  {{'persons.error.mandatory.field' | translate}}
+                </span>
             </div>
+
         </div>
+
         <div class="form-group">
             <label for="nick" class="control-label col-xs-2">{{'persons.list.nick' | translate}}</label>
             <div class="col-xs-10">
-                <input type="text" ng-model="vm.person.nick" class="form-control" id="age" placeholder="Nick" required>
+                <input type="text" ng-model="vm.person.nick" class="form-control" id="age" placeholder="Nick" required/>
             </div>
         </div>
+
         <div class="form-group">
             <label for="employee" class="control-label col-xs-2">{{'persons.list.employee' | translate}}</label>
             <div class="col-xs-10">
-                <div class="checkbox">
+                <div >
                     <input type="checkbox" name="employee" ng-model="vm.person.employee" id="employee" ng-init="vm.person.employee=false">
                 </div>
             </div>
