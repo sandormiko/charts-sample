@@ -14,11 +14,13 @@
     "persons.list.employee": "Employee",
     "persons.list.nick": "Nick",
     "persons.list.job": "Job title",
-    "persons.popup.title" : "Create new person",
+    "persons.popup.title" : "New person",
     "persons.chart.title": "Distribution of persons by their age",
     "persons.chart.xAxis.title": "Age",
     "persons.chart.yAxis.title": "Nr of persons",
     "persons.delete.confirm.title": "Confirmation",
-    "persons.delete.confirm.message": "Do you want to delete ?"
+    "persons.delete.confirm.message": "Do you want to delete ?",
+	"persons.error.mandatory.field" : "This is a mandatory field",
+	"persons.error.number.field" : "Invalid age (must be a number between 1 and 200)"
 
 }

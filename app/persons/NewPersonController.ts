@@ -1,8 +1,10 @@
 import {PersonService} from './PersonService';
 import {PersonDTO} from './Person.types';
 
-export class NewPersonController {
+const MAX_AGE : number = 200;
 
+export class NewPersonController {
+	
     static $inject = ["personService"];
 
     person: PersonDTO;
@@ -13,9 +15,19 @@ export class NewPersonController {
     $onInit() {
         this.person = <PersonDTO>{};
     }
+	
     submit(close: Function, isFormValid: boolean) {
-      if(isFormValid){
+	  if(isFormValid){
         this.personService.savePerson(this.person, close);
         }
     }
+	
+	validateAgeRange(personForm : any){
+		if(personForm.age.$valid){
+			let ageAsNum :number = +this.person.age;
+			if(ageAsNum > MAX_AGE){
+				personForm.age.$setValidity("pattern", false);
+			}
+		}
+	}
 }

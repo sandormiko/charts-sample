@@ -26,9 +26,12 @@
         <div class="form-group">
             <label for="age" class="control-label col-xs-2">{{'persons.list.age' | translate}}</label>
             <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.age.$valid }">
-                <input type="text" ng-model="vm.person.age" class="form-control" ng-pattern="/^[0-9]*$/" name="age" placeholder="Age" required>
-                <span class="help-block" ng-show="personForm.$submitted && personForm.age.$invalid">
+                <input type="text" ng-model="vm.person.age" class="form-control"ng-change="vm.validateAgeRange(personForm)" ng-pattern="/^[1-9][0-9]*$/" name="age" placeholder="Age" required>
+                <span class="help-block" ng-show="personForm.$submitted && personForm.age.$error.required">
                   {{'persons.error.mandatory.field' | translate}}
+                </span>
+				<span class="help-block" ng-show="personForm.$submitted && personForm.age.$error.pattern">
+                  {{'persons.error.number.field' | translate}}
                 </span>
             </div>
 
@@ -36,16 +39,19 @@
 
         <div class="form-group">
             <label for="nick" class="control-label col-xs-2">{{'persons.list.nick' | translate}}</label>
-            <div class="col-xs-10">
-                <input type="text" ng-model="vm.person.nick" class="form-control" id="age" placeholder="Nick" required/>
+            <div class="col-xs-10" ng-class="{ 'has-error' : personForm.$submitted && !personForm.nick.$valid }">
+                <input type="text" ng-model="vm.person.nick" class="form-control" name="nick" placeholder="Nick" required/>
+				<span class="help-block" ng-show="personForm.$submitted && personForm.nick.$invalid">
+                  {{'persons.error.mandatory.field' | translate}}
+                </span>
             </div>
         </div>
 
         <div class="form-group">
             <label for="employee" class="control-label col-xs-2">{{'persons.list.employee' | translate}}</label>
             <div class="col-xs-10">
-                <div >
-                    <input type="checkbox" name="employee" ng-model="vm.person.employee" id="employee" ng-init="vm.person.employee=false">
+                <div class="checkbox">
+                    <input type="checkbox" name="employee" ng-model="vm.person.employee" ng-init="vm.person.employee=false">
                 </div>
             </div>
         </div>
